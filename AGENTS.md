@@ -35,6 +35,12 @@ Build a Windows desktop application for learning Java desktop development and lo
 - Maven artifact/name and Java module/package are normalized to `nrcdocapp` / `sk.nrcdocapp`.
 - JavaFX Controls and FXML dependencies use version 27; compiler source/target are 27.
 - Template classes and FXML are named `NrcDocApp`, `MainController`, and `main-view.fxml`.
+- The main window has a top navigation bar for HOME, TERAJŠIE OCHORENIE, ANAMNÉZA, OBJEKTÍVNY NÁLEZ, and ZÁVER. `main-view.fxml` contains the shared navigation and content host; each page has its own FXML in `src/main/resources/sk/nrcdocapp/views/` and controller in `sk.nrcdocapp.controller`.
+- Loaded page roots are cached while switching, so in-memory form contents can remain when navigating away and back.
+- Navigation clicks animate the selected button with a brief scale-down-and-back effect in `controller/MainController.java`.
+- Navigation appearance is in `src/main/resources/sk/nrcdocapp/app.css`.
+- HOME displays `src/main/resources/sk/nrcdocapp/images/homeImage.jpg` as a bundled classpath resource.
+- The Terajšie ochorenie screen currently has male/female radio buttons, a digits-only age field with a gender-sensitive Slovak suffix, a generate button, an editable output area, and a clipboard copy button.
 - The generated skeleton includes JavaFX Controls and FXML, plus a Maven Wrapper using Maven 3.8.5.
 - No ControlsFX, BootstrapFX, or FormsFX dependency is currently present.
 - The IntelliJ project directory is still named `myNrcDocApp` inside the repository; the user has not asked to move or rename this directory.

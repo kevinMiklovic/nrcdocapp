@@ -93,8 +93,8 @@
                     <appVersion>1.0.0</appVersion>
                     <vendor>NrcDocApp</vendor>
                     <type>APP_IMAGE</type>
-                    <!-- Hotový balík ulož do koreňového priečinka projektu, mimo dočasného target/. -->
-                    <destination>${project.basedir}/dist</destination>
+                    <!-- Hotový balík ulož do priečinka target/dist. -->
+                    <destination>${project.build.directory}/dist</destination>
                     <removeDestination>true</removeDestination>
                 </configuration>
             </plugin>

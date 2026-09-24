@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Formulár Terajšie ochorenie zatiaľ skladá základný opis pohlavia a veku. -->
+<VBox alignment="TOP_LEFT" spacing="22.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sk.nrcdocapp.controller.IllnessController" styleClass="page-content">
+    <padding>
+        <Insets top="36.0" right="44.0" bottom="36.0" left="44.0"/>
+    </padding>
+
+    <Label text="TERAJŠIE OCHORENIE" styleClass="page-title"/>
+
+    <GridPane hgap="18.0" vgap="18.0" maxWidth="760.0">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120.0"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Pohlavie" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <HBox spacing="22.0" alignment="CENTER_LEFT" GridPane.rowIndex="0" GridPane.columnIndex="1">
+            <RadioButton fx:id="maleRadio" text="Muž" styleClass="form-radio"/>
+            <RadioButton fx:id="femaleRadio" text="Žena" styleClass="form-radio"/>
+        </HBox>
+
+        <Label text="Vek" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <HBox spacing="8.0" alignment="CENTER_LEFT" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <TextField fx:id="ageField" promptText="Zadajte vek" prefWidth="180.0" styleClass="form-field"/>
+            <Label fx:id="ageSuffixLabel" text="-ročný/-ročná" styleClass="page-description"/>
+        </HBox>
+    </GridPane>
+
+    <Button text="Generovať text" onAction="#onGenerateText" styleClass="primary-button"/>
+
+    <Label text="Vygenerovaný text (môžete ho upraviť)" styleClass="form-label"/>
+    <TextArea fx:id="generatedTextArea" promptText="Tu sa zobrazí vygenerovaný text…"
+              wrapText="true" prefRowCount="8" styleClass="result-text-area" VBox.vgrow="ALWAYS"/>
+
+    <HBox spacing="14.0" alignment="CENTER_LEFT">
+        <Button text="Kopírovať text" onAction="#onCopyText" styleClass="primary-button"/>
+        <Label fx:id="statusLabel" styleClass="page-description"/>
+    </HBox>
+</VBox>

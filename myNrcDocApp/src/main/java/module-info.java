@@ -5,8 +5,10 @@ module sk.nrcdocapp {
     // Podpora načítania obrazovky zo súboru FXML.
     requires javafx.fxml;
 
-    // FXMLLoader potrebuje reflexiou vytvoriť controller a napojiť jeho polia a metódy.
+    // FXMLLoader potrebuje reflexiou vytvárať controllery v hlavnom balíku.
     opens sk.nrcdocapp to javafx.fxml;
+    // Sprístupní JavaFX controller triedy pre samostatné obrazovky.
+    opens sk.nrcdocapp.controller to javafx.fxml;
     // Verejné triedy balíka sprístupní ostatným modulom, napríklad JavaFX spúšťaču.
     exports sk.nrcdocapp;
 }

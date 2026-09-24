@@ -1,0 +1,78 @@
+/* Základný vzhľad okna a obsahovej plochy. */
+.app-root {
+    -fx-background-color: #f4f6f9;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Ružový horný pás oddeľuje navigáciu od obsahu. */
+.navigation-bar {
+    -fx-background-color: #d95783;
+}
+
+.content-host {
+    -fx-background-color: white;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 16px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: #c04470;
+    -fx-text-fill: white;
+}
+
+.nav-button:selected {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #b83263;
+}
+
+.page-content {
+    -fx-background-color: white;
+}
+
+.page-title {
+    -fx-text-fill: #17324d;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.page-description {
+    -fx-text-fill: #5e6b78;
+    -fx-font-size: 15px;
+}
+
+.form-label {
+    -fx-text-fill: #293847;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.form-radio {
+    -fx-font-size: 15px;
+}
+
+.form-field,
+.result-text-area {
+    -fx-font-size: 15px;
+}
+
+.primary-button {
+    -fx-background-color: #d95783;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 18px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #c04470;
+}

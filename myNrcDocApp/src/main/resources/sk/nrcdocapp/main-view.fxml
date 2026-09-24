@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<!-- Hlavné zvislé rozloženie okna; controller obsluhuje udalosti a stav prvkov. -->
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="sk.nrcdocapp.MainController">
-    <!-- Vnútorné okraje medzi obsahom a okrajom okna. -->
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 
-    <!-- fx:id prepája popisok s poľom statusText v MainController. -->
-    <Label fx:id="statusText" text="Aplikácia je pripravená."/>
-    <!-- onAction prepája kliknutie s metódou controlleru. -->
-    <Button text="Overiť aplikáciu" onAction="#onVerifyButtonClick"/>
+<!-- Hlavné okno drží spoločnú navigáciu a miesto pre načítanú obrazovku. -->
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sk.nrcdocapp.controller.MainController"
+            styleClass="app-root">
+    <top>
+        <!-- Tieto tlačidlá zostávajú na mieste pri prepínaní jednotlivých FXML obrazoviek. -->
+        <HBox alignment="CENTER" spacing="8.0" styleClass="navigation-bar">
+            <padding>
+                <Insets top="14.0" right="20.0" bottom="14.0" left="20.0"/>
+            </padding>
+            <Button fx:id="homeButton" id="home" text="HOME" onAction="#onNavigationClick" styleClass="nav-button"/>
+            <Button fx:id="illnessButton" id="illness" text="TERAJŠIE OCHORENIE" onAction="#onNavigationClick" styleClass="nav-button"/>
+            <Button fx:id="historyButton" id="history" text="ANAMNÉZA" onAction="#onNavigationClick" styleClass="nav-button"/>
+            <Button fx:id="examButton" id="exam" text="OBJEKTÍVNY NÁLEZ" onAction="#onNavigationClick" styleClass="nav-button"/>
+            <Button fx:id="conclusionButton" id="conclusion" text="ZÁVER" onAction="#onNavigationClick" styleClass="nav-button"/>
+        </HBox>
+    </top>
 
-    <Button text="awdscascasc" onAction="#onVerifyButtonClick"/>
-</VBox>
+    <center>
+        <!-- MainController sem vloží samostatný obsah vybraného FXML súboru. -->
+        <StackPane fx:id="contentPane" styleClass="content-host"/>
+    </center>
+</BorderPane>

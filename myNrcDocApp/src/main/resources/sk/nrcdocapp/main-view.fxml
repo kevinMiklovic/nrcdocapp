@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<!-- Hlavné zvislé rozloženie okna; controller obsluhuje udalosti a stav prvkov. -->
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sk.nrcdocapp.MainController">
+    <!-- Vnútorné okraje medzi obsahom a okrajom okna. -->
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- fx:id prepája popisok s poľom statusText v MainController. -->
+    <Label fx:id="statusText" text="Aplikácia je pripravená."/>
+    <!-- onAction prepája kliknutie s metódou controlleru. -->
+    <Button text="Overiť aplikáciu" onAction="#onVerifyButtonClick"/>
+
+    <Button text="awdscascasc" onAction="#onVerifyButtonClick"/>
+</VBox>
